@@ -7,6 +7,7 @@ interface IButton {
 }
 
 export const StyledButton = styled.button<IButton>`
+    height: 100%;
     border: 0;
     padding: 10px 20px;
     font-weight: bold;
