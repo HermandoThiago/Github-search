@@ -10,9 +10,13 @@ export const StyledButton = styled.button<IButton>`
     border: 0;
     padding: 10px 20px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.8rem;
     border-radius: 6px;
     cursor: pointer;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     :hover{
         transform: translateY(-2px);
@@ -20,6 +24,11 @@ export const StyledButton = styled.button<IButton>`
 
     :active{
         transform: translateY(0);
+    }
+
+    svg{
+        margin-right: 2px;
+        font-size: 1.1rem;
     }
 
     ${(props) => {
