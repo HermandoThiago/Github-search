@@ -12,11 +12,13 @@ import { AiOutlineGithub, AiOutlineHeart } from 'react-icons/ai';
 interface IPropsCardRepository {
     title: string;
     description?: string;
+    url: string;
 }
 
 export default function CardRepository({ 
     title, 
-    description
+    description,
+    url
 }: IPropsCardRepository){
     return (
         <StyledCardRepository>
@@ -29,11 +31,13 @@ export default function CardRepository({
                 <hr />
             </StyledCardDescription>
             <StyledContainerButton>
-                <Button 
-                    title='Acessar repositório'
-                    color='primary'
-                    icon={<AiOutlineGithub />}
-                />
+                <a href={url} target="_blank">
+                    <Button 
+                        title='Acessar repositório'
+                        color='primary'
+                        icon={<AiOutlineGithub />}
+                    />
+                </a>
                 <Button 
                     title='Favoritar'
                     color='secondary'
