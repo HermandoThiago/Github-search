@@ -1,5 +1,13 @@
-export default function Container(){
+import { StyledContainer } from "./styled";
+
+interface IPropsContainer {
+    children: React.ReactNode;
+}
+
+export default function Container({ children }: IPropsContainer){
     return (
-        <div></div>
+        <StyledContainer>
+            {children}
+        </StyledContainer>
     );
 };
