@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Header should match snapshot 1`] = `
+<header
+  className="sc-bczRLJ eVkjkM"
+>
+  Github Search
+</header>
+`;
