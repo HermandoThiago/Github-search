@@ -26,7 +26,7 @@ export default function Home(){
         return response;
     };
 
-    const { data, isLoading, isFetching, refetch, isError, error } = useQuery(['repositories'], () => handleSearchRepositories(user), {
+    const { data, isFetching, refetch, isError, error } = useQuery(['repositories'], () => handleSearchRepositories(user), {
         enabled: false,
     })
 
@@ -59,7 +59,6 @@ export default function Home(){
                     />      
                 </StyledSearchContainer>
                 <CardContainer 
-                    loading={isLoading}
                     fetching={isFetching}
                     isError={isError}
                     data={data}

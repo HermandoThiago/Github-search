@@ -10,7 +10,6 @@ interface IRepository {
 }
 
 interface IPropsCardContainer {
-    loading: boolean;
     fetching: boolean;
     isError: boolean;
     data: IRepository[];
@@ -18,7 +17,6 @@ interface IPropsCardContainer {
 }
 
 export default function CardContainer({ 
-    loading,
     fetching,
     isError,
     erro,

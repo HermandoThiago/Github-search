@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Footer should math snapshot 1`] = `
+<footer
+  className="sc-bczRLJ hPOUwS"
+>
+  Develop by @ 🎩 HermandoThiago
+</footer>
+`;
