@@ -6,6 +6,7 @@ interface IRepository {
     name: string;
     description: string;
     html_url: string;
+    message?: string;
 }
 
 interface IPropsCardContainer {
@@ -24,27 +25,31 @@ export default function CardContainer({
     data
  }: IPropsCardContainer){
 
-    if(loading || fetching){
+    if(fetching){
         return <Loading />
     }
 
     if(isError || erro){
-        return <p>Deu erro na sua chamada, tente novamente</p>
+        return <p>Nenhum repositório encontrado!</p>
     }
-
-    console.log('Data aquiiiiiii', data)
 
     return (
         <StyledCardsContainer>
             {data?.map((repo: IRepository, index: number) => {
-                return (
-                    <CardRepository 
-                        key={index}
-                        title={repo?.name}
-                        description={repo?.description}
-                        url={repo?.html_url}
-                    />
-                )
+
+                if(repo.message){
+                    return <p>Nenhum repositório encontrado</p>
+                }else{
+                    return (
+                        <CardRepository 
+                            key={index}
+                            title={repo?.name}
+                            description={repo?.description}
+                            url={repo?.html_url}
+                        />
+                    )
+                }
+
             })}
         </StyledCardsContainer>
     )

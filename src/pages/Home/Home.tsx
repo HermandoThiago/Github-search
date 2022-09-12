@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useEffect } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
@@ -12,34 +12,22 @@ import { StyledAuthor, StyledSearchContainer } from "./styled";
 import { AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
 
 import { getRepositories } from 'services/api';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 
 
 export default function Home(){
-    const [user, setUser] = useState<string>('HermandoThiago');
+    const [user, setUser] = useState<string>('');
 
     const handleSearchRepositories = async (name: string) => {
         const response = await getRepositories(name);
         if(response.message){
-            return response.message;
+            return [...response];
         }
         return response;
     };
 
-    const queryClient = useQueryClient();
-
     const { data, isLoading, isFetching, refetch, isError, error } = useQuery(['repositories'], () => handleSearchRepositories(user), {
         enabled: false,
-        initialData: () => {
-            const repo = queryClient
-                .getQueriesData(['repositories'])
-            
-            if(repo){
-                return repo;
-            }else {
-                return undefined;
-            }
-        }
     })
 
     const handleChangeUser = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setUser(e.target.value);
