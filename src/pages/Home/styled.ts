@@ -5,8 +5,20 @@ export const StyledSearchContainer = styled.div`
     margin-top: 40px;
     padding: 10px 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+
+        button{
+            margin-top: 10px;
+            width: 100%;
+        }
+
+    }
+
 `;
 
 export const StyledAuthor = styled.span`

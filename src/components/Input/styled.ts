@@ -13,4 +13,8 @@ export const StyledInput = styled.input`
         outline: 0;
     }
 
+    @media screen and (max-width: 600px){
+        width: 100%;
+    }
+
 `;

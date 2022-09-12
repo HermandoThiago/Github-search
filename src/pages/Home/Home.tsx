@@ -25,7 +25,6 @@ export default function Home(){
         if(name.length === 0){
             toast.error('O campo de busca não pode estar vázio');
             throw new Error('name vazio');
-            return false;
         }
 
         if(response.message){
