@@ -18,7 +18,7 @@ export function getStorage(){
 
 export function insertStorage(_repo: IPropsCardRepository): void{
     const data = localStorage.getItem("@repositories");
-    toast.success('Salvando dados');
+    toast.success('Dados salvos com sucesso');
     if(data === null){
         localStorage.setItem("@repositories", JSON.stringify([_repo]));
     }else{

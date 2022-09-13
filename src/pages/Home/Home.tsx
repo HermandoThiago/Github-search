@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import CardContainer from '../../components/CardContainer/CardContainer';
+import Modal from '../../components/Modal/Modal';
 
 import { StyledAuthor, StyledSearchContainer } from "./styled";
 
@@ -18,6 +19,7 @@ import { Toaster, toast } from 'react-hot-toast';
 
 export default function Home(){
     const [user, setUser] = useState<string>('');
+    const [modal, setModal] = useState<boolean>(false);
 
     const handleSearchRepositories = async (name: string) => {
         const response = await getRepositories(name);
@@ -44,13 +46,17 @@ export default function Home(){
     })
 
     const handleChangeUser = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setUser(e.target.value);
-    
+    const handleChangeModal = () => setModal(!modal);
 
     return (
         <>
             <Toaster
                 position="top-right"
                 reverseOrder={false}
+            />
+            <Modal 
+                show={modal}
+                close={handleChangeModal}
             />
             <Header>
                 Github Search
@@ -73,6 +79,7 @@ export default function Home(){
                         title="Favoritos"
                         color="secondary"
                         icon={<AiOutlineHeart />}
+                        click={handleChangeModal}
                     />      
                 </StyledSearchContainer>
                 <CardContainer 
