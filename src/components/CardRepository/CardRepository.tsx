@@ -9,6 +9,8 @@ import Button from '../Button/Button';
 
 import { AiOutlineGithub, AiOutlineHeart } from 'react-icons/ai';
 
+import { insertStorage } from '../../utils/storage';
+
 interface IPropsCardRepository {
     title: string;
     description?: string;
@@ -42,6 +44,7 @@ export default function CardRepository({
                     title='Favoritar'
                     color='secondary'
                     icon={<AiOutlineHeart />}
+                    click={() => insertStorage({title, description, url})}
                 />
             </StyledContainerButton>
         </StyledCardRepository>
