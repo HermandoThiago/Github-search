@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Loading should match snapshot 1`] = `
+<div
+  className="sc-bczRLJ enopnZ"
+>
+  <svg
+    aria-busy={true}
+    data-testid="falling-lines"
+    height="100"
+    role="status"
+    viewBox="0 0 100 100"
+    width="100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      data-testid="falling-lines-rect-1"
+      fill="#fff"
+      height="50"
+      rx="4"
+      ry="4"
+      width="10"
+      y="25"
+    >
+      <animate
+        attributeName="x"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="10;100"
+      />
+      <animateTransform
+        attributeName="transform"
+        dur="1.2s"
+        from="0 10 70"
+        repeatCount="indefinite"
+        to="-60 100 70"
+        type="rotate"
+      />
+      <animate
+        attributeName="opacity"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="0;1;0"
+      />
+    </rect>
+    <rect
+      fill="#fff"
+      height="50"
+      rx="4"
+      ry="4"
+      width="10"
+      y="25"
+    >
+      <animate
+        attributeName="x"
+        begin="0.4s"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="10;100"
+      />
+      <animateTransform
+        attributeName="transform"
+        begin="0.4s"
+        dur="1.2s"
+        from="0 10 70"
+        repeatCount="indefinite"
+        to="-60 100 70"
+        type="rotate"
+      />
+      <animate
+        attributeName="opacity"
+        begin="0.4s"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="0;1;0"
+      />
+    </rect>
+    <rect
+      data-testid="falling-lines-rect-2"
+      fill="#fff"
+      height="50"
+      rx="4"
+      ry="4"
+      width="10"
+      y="25"
+    >
+      <animate
+        attributeName="x"
+        begin="0.8s"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="10;100"
+      />
+      <animateTransform
+        attributeName="transform"
+        begin="0.8s"
+        dur="1.2s"
+        from="0 10 70"
+        repeatCount="indefinite"
+        to="-60 100 70"
+        type="rotate"
+      />
+      <animate
+        attributeName="opacity"
+        begin="0.8s"
+        dur="1.2s"
+        repeatCount="indefinite"
+        values="0;1;0"
+      />
+    </rect>
+  </svg>
+</div>
+`;

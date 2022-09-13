@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Container should match snapshot 1`] = `
+<section
+  className="sc-bczRLJ kapKWY"
+>
+  <p>
+    container
+  </p>
+</section>
+`;

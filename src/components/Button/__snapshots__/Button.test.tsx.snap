@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Button should match snapshot 1`] = `
+<button
+  className="sc-bczRLJ hIhHdg"
+  color="primary"
+>
+  click me
+</button>
+`;
