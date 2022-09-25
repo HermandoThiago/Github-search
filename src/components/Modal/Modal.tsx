@@ -20,7 +20,7 @@ interface IPropsModal {
 
 export default function Modal({ show, close }: IPropsModal){
     const [search, setSearch] = useState<string>('');
-    const [repositories, setRepositories] = useState([]);
+    const [repositories, setRepositories] = useState<ICardRepository[]>([]);
     
     useEffect(() => {
         setRepositories(getStorage());
@@ -32,6 +32,10 @@ export default function Modal({ show, close }: IPropsModal){
     }
     
     const handleChangeSearch = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setSearch(e.target.value);
+    
+    const filterRepositories = repositories.filter(repo => 
+        repo.title.toLowerCase().includes(search.toLocaleLowerCase())    
+    );
 
     return (
         <StyledContainerModal 
@@ -49,11 +53,11 @@ export default function Modal({ show, close }: IPropsModal){
                 </StyledContainerSearch>
                 <hr />
                 <StyledContainerRepos>
-                    {repositories.length === 0 ? 
+                    {filterRepositories.length === 0 ? 
                         <StyledMessage>
                             Nenhum repositório salvo.
                         </StyledMessage> :
-                    repositories.map(({ title, description, url, id }: ICardRepository) => {
+                    filterRepositories.map(({ title, description, url, id }: ICardRepository) => {
                         return (
                             <CardRepository
                                 key={id} 
