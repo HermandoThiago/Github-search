@@ -1,6 +1,6 @@
 import { StyledHeader } from "./styled"
 
-interface IPropsHeader {
+export interface IPropsHeader {
     children: string | React.ReactNode;
 }
 

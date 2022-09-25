@@ -1,6 +1,6 @@
 import { StyledButton } from './styled';
 
-interface IPropsButton {
+export interface IPropsButton {
     title: string;
     icon?: React.ReactNode;
     color: 'primary' | 'secondary';
@@ -8,9 +8,9 @@ interface IPropsButton {
 }
 
 export default function Button({ 
-    title, 
+    title = 'Button', 
     icon, 
-    color,
+    color = 'primary',
     click
  }: IPropsButton){
     return (

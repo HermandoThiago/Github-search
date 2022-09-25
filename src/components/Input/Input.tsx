@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { StyledInput } from "./styled";
 
-interface IPropsInput {
+export interface IPropsInput {
     placeholder: string;
     type: string;
     change: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -9,8 +9,8 @@ interface IPropsInput {
 }
 
 export default function Input({ 
-    placeholder, 
-    type, 
+    placeholder = 'placeholder', 
+    type = 'text', 
     change, 
     value
 }: IPropsInput){

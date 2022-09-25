@@ -2,7 +2,7 @@
 
 exports[`Tests Button should match snapshot 1`] = `
 <button
-  className="sc-bczRLJ hIhHdg"
+  className="sc-bczRLJ ebkUcz"
   color="primary"
 >
   click me

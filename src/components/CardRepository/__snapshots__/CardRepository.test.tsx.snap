@@ -28,7 +28,7 @@ exports[`Tests CardRepository should math snapshot 1`] = `
       target="_blank"
     >
       <button
-        className="sc-eCYdqJ fjiSZH"
+        className="sc-eCYdqJ knuGWo"
         color="primary"
       >
         <svg
@@ -53,7 +53,7 @@ exports[`Tests CardRepository should math snapshot 1`] = `
       </button>
     </a>
     <button
-      className="sc-eCYdqJ jnoxGy"
+      className="sc-eCYdqJ gtBYjh"
       color="secondary"
       onClick={[Function]}
     >

@@ -1,6 +1,6 @@
 import { StyledFooter } from "./styled";
 
-interface IPropsFooter {
+export interface IPropsFooter {
     children: string | React.ReactNode;
 }
 

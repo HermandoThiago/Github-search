@@ -19,6 +19,7 @@ export const StyledButton = styled.button<IButton>`
     justify-content: center;
     align-items: center;
     border: 1px solid #fff;
+    color: #fff;
 
     :hover{
         transform: translateY(-2px);
