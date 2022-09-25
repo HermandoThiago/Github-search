@@ -1,13 +1,8 @@
 import { StyledCardsContainer } from './styled';
 import Loading from '../Loading/Loading';
 import CardRepository from '../CardRepository/CardRepository';
-
-interface IRepository {
-    name: string;
-    description: string;
-    html_url: string;
-    message?: string;
-}
+import { IRepository } from 'interfaces';
+import { insertStorage } from 'utils/storage';
 
 interface IPropsCardContainer {
     fetching: boolean;
@@ -38,12 +33,21 @@ export default function CardContainer({
                 if(repo.message){
                     return <p>Nenhum repositório encontrado</p>
                 }else{
+
+                    const { 
+                        name: title, 
+                        description, 
+                        html_url: url
+                    } = repo; 
+
                     return (
                         <CardRepository 
                             key={index}
-                            title={repo?.name}
-                            description={repo?.description}
-                            url={repo?.html_url}
+                            title={title}
+                            buttonTitle
+                            description={description}
+                            url={url}
+                            func={() => insertStorage({ title, description, url })}
                         />
                     )
                 }

@@ -9,6 +9,7 @@ describe('Tests CardRepository', () => {
                 title='github'
                 description='description'
                 url='www.github.com'
+                buttonTitle
             />
         );
 
@@ -22,6 +23,7 @@ describe('Tests CardRepository', () => {
                 title='github'
                 description='description'
                 url='www.github.com'
+                buttonTitle
             />
         ).toJSON();
 

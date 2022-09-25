@@ -6,32 +6,30 @@ import {
     StyledContainerRepos,
     StyledContainerSearch 
 } from './style';
-
 import Input from '../Input/Input';
 import CardRepository from '../../components/CardRepository/CardRepository';
-
-import { getStorage } from '../../utils/storage';
-
+import { getStorage, removeStorage } from '../../utils/storage';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+
+import { ICardRepository } from '../../interfaces/index';
 
 interface IPropsModal {
     show: boolean;
     close: () => void;
 }
 
-interface IStorageRepository {
-    title: string;
-    description: string;
-    url: string;
-}
-
 export default function Modal({ show, close }: IPropsModal){
     const [search, setSearch] = useState<string>('');
     const [repositories, setRepositories] = useState([]);
-
+    
     useEffect(() => {
         setRepositories(getStorage());
     }, [show]);
+
+    const removeCard = (id: string): void => {
+        removeStorage(id);
+        setRepositories(getStorage());
+    }
     
     const handleChangeSearch = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setSearch(e.target.value);
 
@@ -55,13 +53,15 @@ export default function Modal({ show, close }: IPropsModal){
                         <StyledMessage>
                             Nenhum repositório salvo.
                         </StyledMessage> :
-                    repositories.map((repo: IStorageRepository, index: number) => {
+                    repositories.map(({ title, description, url, id }: ICardRepository) => {
                         return (
                             <CardRepository
-                                key={index} 
-                                title={repo.title}
-                                description={repo.description}
-                                url={repo.url}
+                                key={id} 
+                                title={title}
+                                buttonTitle={false}
+                                description={description}
+                                url={url}
+                                func={() => removeCard(id!)}
                             />
                         )
                     })}

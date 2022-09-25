@@ -55,7 +55,6 @@ exports[`Tests CardRepository should math snapshot 1`] = `
     <button
       className="sc-eCYdqJ gtBYjh"
       color="secondary"
-      onClick={[Function]}
     >
       <svg
         fill="currentColor"

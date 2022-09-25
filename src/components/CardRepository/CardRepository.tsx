@@ -4,23 +4,23 @@ import {
     StyledCardDescription,
     StyledContainerButton
 } from './styled';
-
 import Button from '../Button/Button';
-
 import { AiOutlineGithub, AiOutlineHeart } from 'react-icons/ai';
-
-import { insertStorage } from '../../utils/storage';
 
 interface IPropsCardRepository {
     title: string;
+    buttonTitle: boolean;
     description?: string;
     url: string;
+    func?: () => void;
 }
 
 export default function CardRepository({ 
     title, 
-    description,
-    url
+    description = 'Sem descrição',
+    url,
+    buttonTitle,
+    func
 }: IPropsCardRepository){
     return (
         <StyledCardRepository>
@@ -29,7 +29,7 @@ export default function CardRepository({
                 <hr />
             </StyledCardTitle>
             <StyledCardDescription>
-                <p>{description ? description : 'Sem descrição'}</p>
+                <p>{description}</p>
                 <hr />
             </StyledCardDescription>
             <StyledContainerButton>
@@ -41,10 +41,10 @@ export default function CardRepository({
                     />
                 </a>
                 <Button 
-                    title='Favoritar'
+                    title={buttonTitle ? 'Favoritar' : 'Desfavoritar'}
                     color='secondary'
                     icon={<AiOutlineHeart />}
-                    click={() => insertStorage({title, description, url})}
+                    click={func}
                 />
             </StyledContainerButton>
         </StyledCardRepository>
