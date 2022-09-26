@@ -12,6 +12,7 @@ import { getStorage, removeStorage } from '../../utils/storage';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 import { ICardRepository } from '../../interfaces/index';
+import { Toaster } from 'react-hot-toast';
 
 interface IPropsModal {
     show: boolean;
@@ -29,7 +30,7 @@ export default function Modal({ show, close }: IPropsModal){
     const removeCard = (id: string): void => {
         removeStorage(id);
         setRepositories(getStorage());
-    }
+    };
     
     const handleChangeSearch = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setSearch(e.target.value);
     
@@ -38,6 +39,11 @@ export default function Modal({ show, close }: IPropsModal){
     );
 
     return (
+        <>
+        <Toaster
+            position="top-right"
+            reverseOrder={false}
+        />
         <StyledContainerModal 
             show={show}
         >
@@ -72,5 +78,6 @@ export default function Modal({ show, close }: IPropsModal){
                 </StyledContainerRepos>
             </StyledModal>
         </StyledContainerModal>
+        </>
     )
 }

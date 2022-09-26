@@ -11,35 +11,15 @@ import Modal from '../../components/Modal/Modal';
 import { StyledAuthor, StyledSearchContainer } from "./styled";
 
 import { AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
-
-import { getRepositories } from 'services/api';
 import { useQuery } from '@tanstack/react-query';
 
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+
+import { handleSearchRepositories } from '../../services/api';
 
 export default function Home(){
     const [user, setUser] = useState<string>('');
     const [modal, setModal] = useState<boolean>(false);
-
-    const handleSearchRepositories = async (name: string) => {
-        const response = await getRepositories(name);
-
-        if(name.length === 0){
-            toast.error('O campo de busca não pode estar vázio');
-            throw new Error('name vazio');
-        }
-
-        if(response.message){
-            if(response.message === 'Not Found'){
-                toast.error('Nenhum usuário encontrado');
-            }else{
-                toast.error('Número limite de pesquisas excedidas');
-            }
-            return [...response];
-        }
-        toast.success('Busca realizada com sucesso');
-        return response;
-    };
 
     const { data, isFetching, refetch, isError, error } = useQuery(['repositories'], () => handleSearchRepositories(user), {
         enabled: false,
