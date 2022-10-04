@@ -23,6 +23,7 @@ export default function Home() {
     () => handleSearchRepositories(user),
     {
       enabled: false,
+      retry: false,
     }
   );
 
