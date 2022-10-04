@@ -1,6 +1,5 @@
 import { Meta, Story } from "@storybook/react";
 import { IPropsButton, Button } from "./Button";
-
 import { AiOutlineGithub } from "react-icons/ai";
 
 export default {

@@ -1,25 +1,22 @@
-import { ChangeEvent } from "react";
+import { render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { Input } from "./Input";
 
 describe("Tests Input", () => {
+  let name = "";
+
+  it("Render input", () => {
+    const component = render(
+      <Input placeholder="Name" type="text" value={name} change={() => {}} />
+    );
+
+    expect(component).toBeInTheDocument;
+  });
+
   it("should match snapshot", () => {
-    let name = "";
-
-    const handleName = (
-      e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-      name = e.target.value;
-    };
-
     const component = renderer
       .create(
-        <Input
-          placeholder="Name"
-          type="text"
-          value={name}
-          change={handleName}
-        />
+        <Input placeholder="Name" type="text" value={name} change={() => {}} />
       )
       .toJSON();
 

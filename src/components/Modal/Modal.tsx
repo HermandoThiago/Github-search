@@ -13,7 +13,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import { ICardRepository } from "../../interfaces";
 import { Toaster } from "react-hot-toast";
 
-interface IPropsModal {
+export interface IPropsModal {
   show: boolean;
   close: () => void;
 }
@@ -51,7 +51,7 @@ export function Modal({ show, close }: IPropsModal) {
               value={search}
               change={handleChangeSearch}
             />
-            <AiOutlineCloseCircle onClick={close} />
+            <AiOutlineCloseCircle onClick={close} role="closeButton" />
           </StyledContainerSearch>
           <hr />
           <StyledContainerRepos>

@@ -4,7 +4,7 @@ import { CardRepository } from "../CardRepository";
 import { IRepository } from "../../interfaces";
 import { insertStorage } from "../../utils/storage";
 
-interface IPropsCardContainer {
+export interface IPropsCardContainer {
   fetching: boolean;
   isError: boolean;
   data: IRepository[];
@@ -24,6 +24,8 @@ export function CardContainer({
   if (isError || erro) {
     return <p>Nenhum repositório encontrado!</p>;
   }
+
+  console.log(data);
 
   return (
     <StyledCardsContainer>
