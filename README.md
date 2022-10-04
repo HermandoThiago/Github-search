@@ -13,5 +13,12 @@
 - [React Query](https://tanstack.com/query/v4/?from=reactQueryV3&original=https://react-query-v3.tanstack.com/)
 - [React Hot Toast](https://react-hot-toast.com/)
 - [Jest](https://jestjs.io/pt-BR/)
-- [React Testinh Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [Snapshot](https://jestjs.io/pt-BR/docs/snapshot-testing)
+
+## Demonstração
+
+https://user-images.githubusercontent.com/90439416/193918943-b1507282-1235-4ff6-961c-f4e20c2f6e01.mp4
+
+
+
