@@ -1,13 +1,9 @@
 import { StyledContainer } from "./styled";
 
 interface IPropsContainer {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export default function Container({ children }: IPropsContainer){
-    return (
-        <StyledContainer>
-            {children}
-        </StyledContainer>
-    );
-};
+export function Container({ children }: IPropsContainer) {
+  return <StyledContainer>{children}</StyledContainer>;
+}

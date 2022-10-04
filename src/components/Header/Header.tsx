@@ -1,13 +1,9 @@
-import { StyledHeader } from "./styled"
+import { StyledHeader } from "./styled";
 
 export interface IPropsHeader {
-    children: string | React.ReactNode;
+  children: string | React.ReactNode;
 }
 
-export default function Header({ children }: IPropsHeader){
-    return (
-        <StyledHeader>
-            {children}
-        </StyledHeader>
-    )
+export function Header({ children }: IPropsHeader) {
+  return <StyledHeader>{children}</StyledHeader>;
 }
